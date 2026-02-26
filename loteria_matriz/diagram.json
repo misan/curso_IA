@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Gemini CLI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -556.2, "left": -125.4, "attrs": {} },
+    {
+      "type": "wokwi-neopixel-matrix",
+      "id": "matrix",
+      "top": -1212.12,
+      "left": -53.87,
+      "attrs": { "rows": "9", "cols": "10" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn",
+      "top": 265.4,
+      "left": 307.2,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "uno:2", "matrix:DIN", "green", [] ],
+    [ "uno:5V", "matrix:VCC", "red", [] ],
+    [ "uno:GND.2", "matrix:GND", "black", [] ],
+    [ "btn:1.l", "uno:3", "blue", [] ],
+    [ "btn:2.l", "uno:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
